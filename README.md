@@ -24,8 +24,7 @@ Methods that capture a custom exception of the `Exception` class:
 ```java
 public static char readChar(String missatge);
 public static String readString(String missatge);
-public static boolean readYesNo(String missatge); // If the user enters "s", it returns `true`; if "n", it returns `false`.
-```
+public static boolean readYesNo(String missatge); 
 
 💻 Technologies Used
 
