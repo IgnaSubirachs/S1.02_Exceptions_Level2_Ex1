@@ -74,7 +74,7 @@ public class Questions {
                 input = Entrance.readChar("Please enter only one character");
                 System.out.println("Your single character is :" + input);
                 charOk = true;
-            } catch (Exception e) {
+            } catch (InvalidCharException e) {
                 System.out.println(e.getMessage());
                 Entrance.clearBuffer();
             }
@@ -89,7 +89,7 @@ public class Questions {
                 input = Entrance.readString("Please enter a phrase");
                 System.out.println("Your phrase is :" + input);
                 stringOK = true;
-            } catch (InputMismatchException e) {
+            } catch (InvalidStringException e) {
                 System.out.println(e.getMessage());
                 Entrance.clearBuffer();
             }
@@ -104,7 +104,7 @@ public class Questions {
                 exitFromProgram = Entrance.readYesNo("Do you want to exit?");
                 System.out.println("You answer is: " + exitFromProgram);
                 askQuestion = true;
-            } catch (InputMismatchException e) {
+            } catch (InvalidYesNoException e) {
                 System.out.println(e.getMessage());
                 Entrance.clearBuffer();
             }
