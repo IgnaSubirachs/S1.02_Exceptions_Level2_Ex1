@@ -1,7 +1,6 @@
-package PACKAGE_NAME;
-
-public class InvalidYesNoException extends RuntimeException {
-  public InvalidYesNoException(String message) {
-    super(message);
-  }
+public class InvalidYesNoException extends Exception {
+    public InvalidYesNoException()
+    {
+        super("Error: Please insert 'y' for yes or 'n' for no.");
+    }
 }
