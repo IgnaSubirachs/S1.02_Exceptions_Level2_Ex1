@@ -58,6 +58,7 @@ public class Questions {
             try {
                 value = Entrance.readDouble("Please enter a double number");
                 doubleOk = true;
+                Entrance.clearBuffer();
             } catch (InputMismatchException e) {
                 System.out.println("Error: Enter a double number.");
                 Entrance.clearBuffer();

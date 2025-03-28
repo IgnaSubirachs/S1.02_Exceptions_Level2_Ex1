@@ -1,11 +1,14 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class Entrance {
-    static final Scanner sc = new Scanner(System.in);
+    static final Scanner sc = new Scanner(System.in).useLocale(Locale.US);
 
     public static void clearBuffer() {
-        sc.nextLine();
+       if(sc.hasNextLine()) {
+           sc.nextLine();
+       }
     }
 
     public static byte readByte(String message) {
@@ -31,7 +34,7 @@ public class Entrance {
 
     public static char readChar(String message) {
         System.out.println(message);
-        String input = sc.nextLine();
+        String input = sc.nextLine().trim();
         if (input.length() > 1) {
             throw new InputMismatchException("This is not a single character");
         } else {
