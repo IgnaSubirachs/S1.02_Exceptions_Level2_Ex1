@@ -1,7 +1,6 @@
-package PACKAGE_NAME;
+public class InvalidCharException extends Exception {
+    public InvalidCharException() {
 
-public class InvalidCharException extends RuntimeException {
-  public InvalidCharException(String message) {
-    super(message);
-  }
+        super("Error: You have to introduce only one character");
+    }
 }

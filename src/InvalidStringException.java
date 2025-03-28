@@ -1,7 +1,6 @@
-package PACKAGE_NAME;
+public class InvalidStringException extends Exception {
+    public InvalidStringException() {
 
-public class InvalidStringException extends RuntimeException {
-  public InvalidStringException(String message) {
-    super(message);
-  }
+        super("Please only accept words and spaces");
+    }
 }
