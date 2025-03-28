@@ -1,62 +1,109 @@
+📄 Entrane & Questions - User Input Validation System
 📄 Description - Exercise Statement
+This Java project implements a robust input handling system with two main classes:
 
-Create a class called "Entrance". This class should handle different exceptions that may occur in Java when entering data via the keyboard using the Scanner class.
+Entrance: Handles low-level input reading with exception management
 
-The first step is to instantiate an object of the Scanner class and then create static methods to read different types of data from the keyboard.
+Questions: Provides user-friendly prompts with validation
 
-**Important**
+The system enforces proper data formatting and includes custom exceptions for invalid inputs in:
 
-It is crucial to handle exceptions in each method and prompt the user to enter the data again until it is correctly formatted. For example, if a float is entered with a dot instead of a comma, the program should display "Format error" and continue prompting the user until the correct format is provided.
+Character input (readChar)
 
-All methods receive a String with a message to be displayed to the user, such as "Enter your age," and return the appropriate user input in each case, e.g., a byte representing the user's age.
+String input (readString)
 
-Methods that capture the `InputMismatchException` exception:
+Yes/No questions (readSiNo)
 
-```java
-public static byte readByte(String missatge);
-public static int readInt(String missatge);
-public static float readFloat(String missatge);
-public static double readDouble(String missatge);
-```
+Key features:
 
-Methods that capture a custom exception of the `Exception` class:
+Automatic retry on invalid input
 
-```java
-public static char readChar(String missatge);
-public static String readString(String missatge);
-public static boolean readYesNo(String missatge); 
+Locale-aware decimal number handling (forces '.' as decimal separator)
+
+Custom exception classes for specific validation cases
 
 💻 Technologies Used
+Java 8+
 
-- Java
-- Scanner Class
-- Exception Handling (InputMismatchException, Custom Exceptions)
+java.util.Scanner with Locale.US configuration
+
+Custom exception classes:
+
+InvalidCharException
+
+InvalidStringException
+
+InvalidYesNoException
+
+Input validation patterns
 
 📋 Requirements
+Java Development Kit (JDK) 8 or later
 
-- Java Development Kit (JDK) version 8 or higher
-- A Java-compatible IDE (e.g., IntelliJ IDEA, Eclipse, VS Code)
-- Basic understanding of Java programming and exception handling
+IDE (IntelliJ, Eclipse, or VS Code with Java extensions)
+
+Basic understanding of:
+
+Exception handling
+
+Scanner class
+
+Locale settings
 
 🛠️ Installation
+Verify Java installation:
 
-1. Ensure you have Java installed on your system. You can verify this by running:
-   ```sh
-   java -version
-   ```
-2. Clone this repository or download the project files.
-3. Open the project in your preferred Java IDE.
-4. Compile the Java files using:
-   ```sh
-   javac Entrance.java
-   ```
+sh
+Copy
+java -version
+Clone the repository or download source files:
 
+sh
+Copy
+git clone https://github.com/IgnaSubirachs/S1.02_Exceptions_Level2_Ex1.git
+Import project into your IDE
+
+Required files:
+
+Copy
+/src
+Main.java
+Entrada.java
+Questions.java
+InvalidCharException.java
+InvalidStringException.java  
+InvalidYesNoException.java
 ▶️ Execution
+Compile all classes:
 
-1. Run the compiled Java program with:
-   ```sh
-   java Entrance
-   ```
-2. Follow the on-screen instructions to enter various data types.
-3. Handle any errors prompted by incorrect input formatting.
+sh
+Copy
+javac *.java
+Run the main program:
+
+sh
+Copy
+java MainClass
+Example interactions:
+
+Copy
+Enter a character: hello
+Error: You must enter exactly one character
+
+Enter text (letters only): 123
+Error: Only letters and spaces allowed
+
+Continue? (s/n): x
+Error: Enter 's' for yes or 'n' for no
+
+Enter a decimal number: 3.14
+
+🛡️ Custom Exception Handling
+The system throws these custom exceptions:
+
+Exception Class	Thrown When
+InvalidCharException	Input length ≠ 1 character
+InvalidStringException	Input contains non-letter characters
+InvalidYesNoException	Input ≠ 's' or 'n' (case insensitive)
+All exceptions include automatic retry logic until valid input is received.
 

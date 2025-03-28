@@ -74,7 +74,7 @@ public class Questions {
                 input = Entrance.readChar("Please enter only one character");
                 System.out.println("Your single character is :" + input);
                 charOk = true;
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
                 Entrance.clearBuffer();
             }

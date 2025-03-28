@@ -32,27 +32,27 @@ public class Entrance {
     }
 
 
-    public static char readChar(String message) {
+    public static char readChar(String message) throws InvalidCharException {
         System.out.println(message);
         String input = sc.nextLine().trim();
         if (input.length() > 1) {
-            throw new InputMismatchException("This is not a single character");
+            throw new InvalidCharException();
         } else {
             return input.charAt(0);
         }
     }
 
-    public static String readString(String message) {
+    public static String readString(String message) throws InvalidStringException {
         System.out.println(message);
         String input = sc.nextLine();
         if (!input.matches("[A-Za-z\\s]+")) {
-            throw new InputMismatchException("Please only accept words");
+            throw new InvalidStringException();
         } else {
             return input;
         }
     }
 
-    public static boolean readYesNo(String message) {
+    public static boolean readYesNo(String message) throws InvalidYesNoException {
         System.out.print(message + " (y/n): ");
         String input = sc.nextLine().trim().toLowerCase();
         if (input.equals("y")) {
@@ -60,7 +60,7 @@ public class Entrance {
         } else if (input.equals("n")) {
             return false;
         } else {
-            throw new InputMismatchException("Error: Please insert 'y' for yes or 'n' for no.");
+            throw new InvalidYesNoException();
         }
     }
 
